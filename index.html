@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Inosoft Calculator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="assets/calculator.png" />
 
@@ -12,39 +13,42 @@
   </head>
   <body>
     <div class="container">
-      <div class="calculator d-flex text-center justify-content-center align-items-center">
+      <div class="calculator d-flex justify-content-center align-items-center">
         <div class="card">
-          <input type="text" class="calculator-screen text-end px-4 py-4" value="0" disabled />
+          <div class="screen d-flex justify-content-end align-items-center">
+            <div id="screenValue" class="screen-value"></div>
+          </div>
+          <!-- <input type="text" id="calculator-screen" class="calculator-screen text-end px-4 py-4" value="0" disabled /> -->
           <div class="card-body">
             <div class="row top-buffer gap-2">
-              <button class="col">AC</button>
-              <button class="col"><i class="fa-solid fa-delete-left"></i></button>
-              <button class="col">%</button>
-              <button class="col operator">&divide;</button>
+              <button class="col btn-operator" onclick="clean()">AC</button>
+              <button class="col btn-operator" onclick="backspace()"><i class="bi bi-backspace-fill"></i></button>
+              <button class="col btn-operator" onclick="percent()">%</button>
+              <button class="col btn-operator" onclick="input(' / ')">&divide;</button>
             </div>
             <div class="row top-buffer gap-2">
-              <button class="col">7</button>
-              <button class="col">8</button>
-              <button class="col">9</button>
-              <button class="col operator">&times;</button>
+              <button class="col btn-number" onclick="input(7)">7</button>
+              <button class="col btn-number" onclick="input(8)">8</button>
+              <button class="col btn-number" onclick="input(9)">9</button>
+              <button class="col btn-operator" onclick="input(' * ')">&times;</button>
             </div>
             <div class="row top-buffer gap-2">
-              <button class="col">4</button>
-              <button class="col">5</button>
-              <button class="col">6</button>
-              <button class="col operator">&minus;</button>
+              <button class="col btn-number" onclick="input(4)">4</button>
+              <button class="col btn-number" onclick="input(5)">5</button>
+              <button class="col btn-number" onclick="input(6)">6</button>
+              <button class="col btn-operator" onclick="input(' - ')">&minus;</button>
             </div>
             <div class="row top-buffer gap-2">
-              <button class="col">1</button>
-              <button class="col">2</button>
-              <button class="col">3</button>
-              <button class="col operator">&plus;</button>
+              <button class="col btn-number" onclick="input(1)">1</button>
+              <button class="col btn-number" onclick="input(2)">2</button>
+              <button class="col btn-number" onclick="input(3)">3</button>
+              <button class="col btn-operator" onclick="input(' + ')">&plus;</button>
             </div>
             <div class="row top-buffer gap-2">
-              <button class="col">&PlusMinus;</button>
-              <button class="col">0</button>
-              <button class="col">.</button>
-              <button class="col equal">&equals;</button>
+              <button class="col btn-operator" onclick="negativeNumber()"><i class="bi bi-plus-slash-minus"></i></button>
+              <button class="col btn-number" onclick="input(0)">0</button>
+              <button class="col btn-operator" onclick="input('.')">.</button>
+              <button class="col equal" onclick="result()">&equals;</button>
             </div>
           </div>
         </div>

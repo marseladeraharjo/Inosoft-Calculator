@@ -1,5 +1,10 @@
 body {
-  background-color: #eeeeee;
+  font-family: sans-serif;
+  background: radial-gradient(circle, #859db5 0%, #354c64 100%);
+}
+
+.container {
+  padding: 0 20px;
 }
 
 .calculator {
@@ -8,8 +13,8 @@ body {
 
 .card {
   background-color: #18212a;
-  width: 400px;
-  height: 550px;
+  width: 380px;
+  height: auto;
   padding: 16px;
   border-radius: 25px;
   box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.6);
@@ -20,31 +25,45 @@ body {
 button {
   border: 1px solid #36474f;
   background-color: #18212a;
-  color: white;
   border-radius: 50%;
   font-size: 1.2em;
   font-weight: bold;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   text-align: center;
 }
 
-input {
+.screen {
   font-size: 2em;
   font-weight: 600;
   background-color: #36474f;
   color: white;
+  border-radius: 25px;
+  padding: 20px;
+  height: 120px;
+  width: auto;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5) inset;
 }
 
 .top-buffer {
   margin-top: 8px;
 }
 
-.operator {
+.btn-operator {
   background-color: #e5e5e5;
-  color: #18212a;
+  color: #3a606e;
+}
+
+.btn-number {
+  background-color: #3a606e;
+  color: #e5e5e5;
 }
 
 .equal {
   background-color: #ff6531;
+  color: #e5e5e5;
 }
